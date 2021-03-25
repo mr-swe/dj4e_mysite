@@ -28,6 +28,8 @@
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/polls/templates" />
         <option value="$MODULE_DIR$/polls/templates/polls" />
+        <option value="$MODULE_DIR$/home/templates" />
+        <option value="$MODULE_DIR$/home/templates/home" />
       </list>
     </option>
   </component>

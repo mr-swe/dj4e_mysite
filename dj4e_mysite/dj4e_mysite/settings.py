@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # hello app
+    'hello.apps.HelloConfig',
+    # home app
+    'home.apps.HomeConfig',
     # polls app
     'polls.apps.PollsConfig',
     'django.contrib.admin',
