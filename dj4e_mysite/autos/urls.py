@@ -5,5 +5,5 @@ from . import views
 
 app_name = "autos"
 urlpatterns = [
-
+    path('', views.AutosView.as_view(), name='all')
 ]

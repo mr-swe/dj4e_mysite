@@ -1,4 +1,4 @@
-from django.core.validators import MaxLengthValidator
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 
@@ -8,7 +8,7 @@ class Make(models.Model):
     name = models.CharField(
         max_length=200,
         help_text='Enter a Make',
-        validators=[MaxLengthValidator(2, 'Enter at least two character')]
+        validators=[MinLengthValidator(2, 'Enter at least two character')]
     )
 
     def __str__(self):
@@ -19,7 +19,7 @@ class Autos(models.Model):
     nickname = models.CharField(
         max_length=200,
         help_text='Enter Nickname',
-        validators=[MaxLengthValidator(2, "Nickname must be greater than 1 character")]
+        validators=[MinLengthValidator(2, "Nickname must be greater than 1 character")]
     )
     mileage = models.PositiveIntegerField()
     comments = models.CharField(max_length=300)
