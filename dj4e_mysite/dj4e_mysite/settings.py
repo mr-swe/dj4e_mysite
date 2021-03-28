@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # autos app
+    'autos.apps.AutosConfig',
     # hello app
     'hello.apps.HelloConfig',
     # home app
