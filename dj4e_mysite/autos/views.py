@@ -17,3 +17,7 @@ class AutosView(LoginRequiredMixin, View):
         }
         return render(request, 'autos/auto_list.html', ctx)
 
+
+class MakeView(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'autos/make_list.html')

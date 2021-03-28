@@ -23,7 +23,7 @@
         {% endif %}
     </p>
     <p>
-        <a href="">View makes</a> ({{ make_count }}) |
+        <a href="{% url 'autos:make_list' %}">View makes</a> ({{ make_count }}) |
         <a href="">Add a make</a>
     </p>
 {% endblock %}
