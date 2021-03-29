@@ -6,8 +6,8 @@
             <ul>
                 <li>
                     {{ auto.nickname }} - {{ auto.make }}
-                    (<a href="">Update</a>
-                    <a href="">Delete</a>)
+                    (<a href="{% url 'autos:auto_update' auto.id %}">Update</a>
+                    <a href="{% url 'autos:auto_delete' auto.id %}">Delete</a>)
                     {{ auto.comments }} {{ auto.mileage }}KL
                 </li>
             </ul>
@@ -17,7 +17,7 @@
     {% endif %}
     <p>
         {% if make_count > 0 %}
-            <a href="">Add an auto</a>
+            <a href="{% url 'autos:auto_create' %}">Add an auto</a>
         {% else %}
             <a href="">Please add a make before you add an auto.</a>
         {% endif %}

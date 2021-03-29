@@ -1,16 +1,18 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import View
+from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-from .models import Make, Autos
+from .models import Make, Auto
 
 
 # Create your views here.
 
-class AutosView(LoginRequiredMixin, View):
+class AutoView(LoginRequiredMixin, View):
     def get(self, request):
         mc = Make.objects.all().count()
-        al = Autos.objects.all()
+        al = Auto.objects.all()
         ctx = {
             'make_count': mc,
             'auto_list': al,
@@ -20,4 +22,33 @@ class AutosView(LoginRequiredMixin, View):
 
 class MakeView(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'autos/make_list.html')
+        ml = Make.objects.all()
+        ctx = {
+            'make_list': ml
+        }
+        return render(request, 'autos/make_list.html', ctx)
+
+
+# Create data from autos model
+# Update data from autos model
+# Delete data from autos model
+
+class AutoCreate(LoginRequiredMixin, CreateView):
+    model = Auto
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
+    template_name = 'autos/auto_form.html'
+
+
+class AutoUpdate(LoginRequiredMixin, UpdateView):
+    model = Auto
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
+    template_name = 'autos/auto_form.html'
+
+
+class AutoDelete(LoginRequiredMixin, DeleteView):
+    model = Auto
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
+    template_name = 'autos/make_confirm_delete.html'

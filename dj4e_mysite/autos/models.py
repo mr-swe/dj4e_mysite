@@ -15,7 +15,7 @@ class Make(models.Model):
         return self.name
 
 
-class Autos(models.Model):
+class Auto(models.Model):
     nickname = models.CharField(
         max_length=200,
         help_text='Enter Nickname',
