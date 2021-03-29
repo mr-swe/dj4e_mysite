@@ -51,4 +51,27 @@ class AutoDelete(LoginRequiredMixin, DeleteView):
     model = Auto
     fields = '__all__'
     success_url = reverse_lazy('autos:all')
+    template_name = 'autos/auto_confirm_delete.html'
+
+
+# Create data from make model
+# Update data from make model
+# Delete data from make model
+
+class MakeCreate(LoginRequiredMixin, CreateView):
+    model = Make
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
+    template_name = 'autos/make_form.html'
+
+class MakeUpdate(LoginRequiredMixin, UpdateView):
+    model = Make
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
+    template_name = 'autos/make_form.html'
+
+class MakeDelete(LoginRequiredMixin, DeleteView):
+    model = Make
+    fields = '__all__'
+    success_url = reverse_lazy('autos:all')
     template_name = 'autos/make_confirm_delete.html'
