@@ -64,11 +64,13 @@ class MakeCreate(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('autos:all')
     template_name = 'autos/make_form.html'
 
+
 class MakeUpdate(LoginRequiredMixin, UpdateView):
     model = Make
     fields = '__all__'
     success_url = reverse_lazy('autos:all')
     template_name = 'autos/make_form.html'
+
 
 class MakeDelete(LoginRequiredMixin, DeleteView):
     model = Make

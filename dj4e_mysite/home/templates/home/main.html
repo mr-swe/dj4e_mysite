@@ -6,4 +6,13 @@
         <li><p><a href="/hello">Test the session</a></p>
         <li><p><a href="/autos">Auto CRUD</a></p>
     </ul>
+    {% if user.is_authenticated %}
+        Name: {{ user.username }} |
+        Email: {{ user.email }} |
+        Id: {{ user.id }}
+        <P><a href="{% url 'logout'%}?next={{ request.path }}">Logout</a> </P>
+    {% else %}
+    <P>You are not logged in</P>
+    <p>you can <a href="{% url 'login' %}?next={{request.path}}">Login</a> If you like</p>
+    {% endif %}
 {% endblock %}
