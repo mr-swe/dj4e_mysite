@@ -33,6 +33,8 @@
         <option value="$MODULE_DIR$/home/templates/registration" />
         <option value="$MODULE_DIR$/autos/templates" />
         <option value="$MODULE_DIR$/autos/templates/autos" />
+        <option value="$MODULE_DIR$/cats/templates" />
+        <option value="$MODULE_DIR$/cats/templates/cats" />
       </list>
     </option>
   </component>
