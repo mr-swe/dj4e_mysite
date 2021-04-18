@@ -6,26 +6,26 @@ from .models import Ad
 # Create your views here.
 class AdListView(OwnerListView):
     model = Ad
-    template_name = 'ads/article_list.html'
+    template_name = 'ads/ad_list.html'
 
 
 class AdDetailView(OwnerDetailView):
     model = Ad
-    template_name = 'ads/article_detail.html'
+    template_name = 'ads/ad_detail.html'
 
 
 class AdCreateView(OwnerCreateView):
     model = Ad
-    fields = ['title', 'text']
-    template_name = 'ads/article_form.html'
+    fields = ['title', 'text', 'price']
+    template_name = 'ads/ad_form.html'
 
 
 class AdUpdateView(OwnerUpdateView):
     model = Ad
-    fields = ['title', 'text']
-    template_name = 'ads/article_form.html'
+    fields = ['title', 'text', 'price']
+    template_name = 'ads/ad_form.html'
 
 
 class AdDeleteView(OwnerDeleteView):
     model = Ad
-    template_name = 'ads/article_confirm_delete.html'
+    template_name = 'ads/ad_confirm_delete.html'
