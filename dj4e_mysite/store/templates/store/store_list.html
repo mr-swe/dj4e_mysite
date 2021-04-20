@@ -1,0 +1,30 @@
+{% extends 'store_base_menu.html' %}
+
+{% block content %}
+    {% if stores %}
+        {% for store in stores %}
+            <ul>
+            <li>
+                <a href="{% url 'store:store_detail' store.id %}">{{ store.name }}</a>
+                {% if store.owner == user %}
+                    (<a href="{% url 'store:store_update' store.id %}">Update</a> | <a href="{% url 'store:store_delete' store.id %}">Delete</a> )
+                {% endif %}
+            </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>No Store Available</p>
+    {% endif %}
+
+    <p>
+        <a href="{% url 'store:store_create' %}">Add an Store</a> |
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}?next={% url 'store:all' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}?next={% url 'store:all' %}">Login</a>
+        {% endif %}
+    </p>
+    <p>
+    <a href="{% url 'ads:all' %}">Ad List</a>
+    </p>
+{% endblock %}

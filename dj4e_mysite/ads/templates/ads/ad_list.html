@@ -1,4 +1,4 @@
-{% extends "base_menu.html" %}
+{% extends "ads_base_menu.html" %}
 {% block content %}
     <h1>Ads</h1>
     <p>
@@ -17,6 +17,9 @@
         {% else %}
             <p>There are no ads in the database.</p>
         {% endif %}
+    </p>
+    <p>
+    <a href="{% url 'store:all' %}">Store List</a>
     </p>
 
     <p>

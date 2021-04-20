@@ -37,6 +37,8 @@
         <option value="$MODULE_DIR$/cats/templates/cats" />
         <option value="$MODULE_DIR$/ads/templates" />
         <option value="$MODULE_DIR$/ads/templates/ads" />
+        <option value="$MODULE_DIR$/store/templates" />
+        <option value="$MODULE_DIR$/store/templates/store" />
       </list>
     </option>
   </component>

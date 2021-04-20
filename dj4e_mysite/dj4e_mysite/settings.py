@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # sample apps
     'home.apps.HomeConfig',
     'ads.apps.AdsConfig',
+    'store.apps.StoreConfig',
 ]
 
 # When we get to crispy forms :)
